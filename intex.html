@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sam | Personal Website</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0f172a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #38bdf8;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 60px;
+            background:
+                radial-gradient(circle at top, #1e3a8a, #0f172a 55%);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero h2 {
+            font-size: 26px;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #94a3b8;
+            font-size: 18px;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .buttons {
+            margin-top: 35px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 13px 25px;
+            margin: 7px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #38bdf8;
+            color: #082f49;
+        }
+
+        .secondary {
+            border: 1px solid #38bdf8;
+            color: #38bdf8;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+        }
+
+        /* GENERAL SECTIONS */
+
+        section {
+            padding: 90px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            color: #38bdf8;
+        }
+
+        .section-title p {
+            color: #94a3b8;
+            margin-top: 8px;
+        }
+
+        /* ABOUT */
+
+        .about-container {
+            max-width: 900px;
+            margin: auto;
+            background: #1e293b;
+            padding: 35px;
+            border-radius: 20px;
+            border: 1px solid #334155;
+        }
+
+        .about-container p {
+            color: #cbd5e1;
+            font-size: 18px;
+        }
+
+        /* SKILLS */
+
+        .skills {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: #1e293b;
+            padding: 30px 20px;
+            border-radius: 18px;
+            text-align: center;
+            border: 1px solid #334155;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            border-color: #38bdf8;
+        }
+
+        .skill-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .skill-card h3 {
+            color: #38bdf8;
+            margin-bottom: 8px;
+        }
+
+        .skill-card p {
+            color: #94a3b8;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 18px;
+            border: 1px solid #334155;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: #38bdf8;
+        }
+
+        .project-card h3 {
+            color: #38bdf8;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #cbd5e1;
+        }
+
+        /* CALCULATOR */
+
+        .calculator {
+            max-width: 500px;
+            margin: auto;
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #334155;
+        }
+
+        .calculator input {
+            width: 100%;
+            padding: 14px;
+            margin: 8px 0;
+            border-radius: 10px;
+            border: 1px solid #475569;
+            background: #0f172a;
+            color: white;
+            font-size: 16px;
+        }
+
+        .calculator button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 10px;
+            background: #38bdf8;
+            color: #082f49;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .calculator button:hover {
+            background: #7dd3fc;
+        }
+
+        #result {
+            margin-top: 20px;
+            text-align: center;
+            color: #38bdf8;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .contact p {
+            color: #cbd5e1;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #020617;
+            padding: 30px;
+            text-align: center;
+            color: #64748b;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                gap: 10px;
+                font-size: 12px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero h2 {
+                font-size: 21px;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <div class="logo">
+            Sam
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#calculator">Calculator</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- HOME -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                Hi, I'm <span>Sam</span>
+            </h1>
+
+            <h2>
+                Student • Learner • Future Developer
+            </h2>
+
+            <p>
+                Welcome to my personal website.
+                I am learning technology, building projects
+                and improving my skills every day.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#about" class="button primary">
+                    Explore My Website
+                </a>
+
+                <a href="#calculator" class="button secondary">
+                    Try Calculator
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="section-title">
+
+            <h2>About Me</h2>
+
+            <p>A little about me</p>
+
+        </div>
+
+        <div class="about-container">
+
+            <p>
+                Hello! I'm Sam. I am a student who is interested
+                in technology, learning new skills and creating
+                useful projects.
+
+                <br><br>
+
+                This website is one of my first web development
+                projects. I am using it to learn how websites
+                work and to build better projects in the future.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <div class="section-title">
+
+            <h2>My Skills</h2>
+
+            <p>Things I am learning</p>
+
+        </div>
+
+
+        <div class="skills">
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    🌐
+                </div>
+
+                <h3>HTML</h3>
+
+                <p>
+                    Website structure
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    🎨
+                </div>
+
+                <h3>CSS</h3>
+
+                <p>
+                    Website design
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    ⚡
+                </div>
+
+                <h3>JavaScript</h3>
+
+                <p>
+                    Website functionality
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    🧠
+                </div>
+
+                <h3>Learning</h3>
+
+                <p>
+                    Always improving
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <div class="section-title">
+
+            <h2>My Projects</h2>
+
+            <p>Things I have built or will build</p>
+
+        </div>
+
+
+        <div class="projects">
+
+
+            <div class="project-card">
+
+                <h3>🌐 Personal Website</h3>
+
+                <p>
+                    My first website created using HTML and CSS.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>🧮 Percentage Calculator</h3>
+
+                <p>
+                    A simple calculator that can calculate
+                    percentages instantly.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>🚀 Future Project</h3>
+
+                <p>
+                    More useful projects will be added here
+                    as I continue learning.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- CALCULATOR -->
+
+    <section id="calculator">
+
+        <div class="section-title">
+
+            <h2>Percentage Calculator</h2>
+
+            <p>Calculate percentages instantly</p>
+
+        </div>
+
+
+        <div class="calculator">
+
+            <input
+                type="number"
+                id="number"
+                placeholder="Enter total number"
+            >
+
+            <input
+                type="number"
+                id="percentage"
+                placeholder="Enter percentage"
+            >
+
+            <button onclick="calculatePercentage()">
+                Calculate
+            </button>
+
+            <div id="result">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <div class="section-title">
+
+            <h2>Contact Me</h2>
+
+            <p>Let's connect</p>
+
+        </div>
+
+
+        <div class="contact">
+
+            <p>
+                Thanks for visiting my website!
+            </p>
+
+            <a
+                href="mailto:your@email.com"
+                class="button primary">
+                Send Me an Email
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Sam. Built while learning web development.
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function calculatePercentage() {
+
+            let number =
+                document.getElementById("number").value;
+
+            let percentage =
+                document.getElementById("percentage").value;
+
+            if (number === "" || percentage === "") {
+
+                document.getElementById("result").innerText =
+                    "Please enter both numbers.";
+
+                return;
+            }
+
+            let answer =
+                (Number(number) * Number(percentage)) / 100;
+
+            document.getElementById("result").innerText =
+                percentage + "% of " + number + " = " + answer;
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
